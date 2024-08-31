@@ -7,9 +7,22 @@
     <title>Document</title>
 </head>
 <body>
+  <header>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="mapa.html">Conversor DD</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Dados do Cliente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="resumo.html">Resumo de Finalização</a>
+      </li>
+    </ul>
+  </header>
   <section>
-    <form>
-          <div class="row g-3">
+    <form class="container">
+          <div class="row">
             <div class="col">
               <input type="text" class="form-control" name="principal" placeholder="Equipamento principal" aria-label="Equipamento principal">
             </div>
@@ -134,16 +147,16 @@
       </div>
       <p></p>
       <div class="col">
-        <input type="text" class="form-control" name="mtorista" placeholder="Motorista" aria-label="Motorista">
+        <input type="text" class="form-control" name="motorista" placeholder="Motorista" aria-label="Motorista">
       </div>
-      <textarea class="form-control" aria-label="Breve relato" placeholder="Breve relato"></textarea>
-          </div>
-        </div>
-        <button type="button" class="btn btn-primary">Enviar</button>
+      <div class="col">
+        <textarea class="form-control" aria-label="Breve relato" placeholder="Breve relato"></textarea>
+      </div>
+        <button type="button" class="btn btn-primary"> Enviar</button>
     </form>
-    <div>
+    <footer>
         
-    </div>
+    </footer>
   </section>
 </body>
 </html>

@@ -7,9 +7,22 @@
     <title>Document</title>
 </head>
 <body>
+  <header>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="mapa.html">Conversor DD</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Dados do Cliente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="resumo.html">Resumo de Finalização</a>
+      </li>
+    </ul>
+  </header>
   <section>
-    <form>
-        <div class="row g-3">
+    <form class="container">
+        <div class="row">
         <div class="col">
             <input type="text" class="form-control" name="tempoDeslocamento" placeholder="Tempo de Deslocamento da equipe comum até o marco zero" aria-label="Tempo de Deslocamento">
         </div>
@@ -61,7 +74,9 @@
             <option value="Sim">Não</option>
           </select>  
       </div>
-      <textarea class="form-control" aria-label="Resumo" placeholder="Resumo"></textarea>
+      <div class="col">
+        <textarea class="form-control" aria-label="Resumo" placeholder="Resumo"></textarea>
+      </div>
     </div>
     <button type="button" class="btn btn-primary" >Enviar</button>
   </form>
