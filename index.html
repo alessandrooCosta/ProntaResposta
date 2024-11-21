@@ -6,14 +6,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
+<body onload="carregarEstados()">
   <header>
     <ul class="nav justify-content-end">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="mapa.html">Conversor DD</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Dados do Cliente</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="resumo.html">Resumo de Finalização</a>
@@ -52,26 +49,59 @@
               </div>
               <p></p>
               <div class="col">
+                <select class="form-select" aria-label="GR acionou o serviço">
+                    <option selected>GR acionou o serviço</option>
+                    <option value="Não">Não</option>
+                    <option value="Sim">Sim</option>
+                  </select>  
+            </div>
+            <div class="col">
+              <select class="form-select" aria-label="GR irá arcar com os custos">
+                <option selected>GR irá arcar com os custos</option>
+                  <option value="Não">Não</option>
+                  <option value="Sim">Sim</option>
+                </select>  
+          </div>
+          <p></p>
+
+
+
+          <div class="col">
+            <select id="roubo" class="form-select" aria-label="Roubo confirmado" onchange="habilitaHoraData()">
+                <option>Roubo confirmado</option>
+                <option value="Nao">Não</option>
+                <option value="Sim">Sim</option>
+              </select>  
+              <input type="date" id="data" class="form-control" name="data">
+              <input type="time" id="horario"class="form" name="data">
+        </div>
+
+
+
+
+
+
+              <div class="col">
                 <input type="text" class="form-control" name="placaCavalo" placeholder="Placa do Cavalo" aria-label="Placa do Cavalo">
               </div>
-              <div class="col">
-                    <textarea class="form-control" name="placaCarreta" aria-label="Placa da Carreta" placeholder="Placa da Carreta"></textarea>
-              </div>
               <p></p>
+              <div class="col">
+                    <input type="text" class="form-control" name="placaCarreta" placeholder="Placa da Carreta" aria-label="Placa da Carreta" >
+              </div>
               <div class="col">
                 <input type="text" class="form-control" name="marca" placeholder="Marca" aria-label="Marca">
               </div>
+              <p></p>
               <div class="col">
                 <input type="text" class="form-control" name="modelo" placeholder="Modelo" aria-label="Modelo">
               </div>
-              <p></p>
             <div class="col">
     <input type="text" class="form-control" name="ano" placeholder="Ano" aria-label="Ano">
   </div>
+  <p></p>
   <div class="col">
     <input type="text" class="form-control" name="cor" placeholder="Cor" aria-label="Cor">
   </div>
-        <p></p>
   <div class="col">
     <select class="form-select" aria-label="Possui SmartBox">
         <option selected>Possui SmartBox</option>
@@ -79,6 +109,7 @@
         <option value="Sim">Sim</option>
       </select>  
    </div>
+   <p></p>
     <div class="col">
         <select class="form-select" aria-label="Outros equipamentos">
             <option selected>Outros equipamentos(localizadores ou acessórios)</option>
@@ -86,17 +117,17 @@
             <option value="Sim">Sim</option>
           </select>  
     </div>
-    <p></p>
     <div class="col">
-        <input type="text" class="form-control" name="tipoVeiculo" placeholder="Tpo de Veiculo" aria-label="Tpo de Veiculo">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" name="tipoCarroceria" placeholder="Tipo de Carroceria" aria-label="Tipo de Carroceria">
+        <input type="text" class="form-control" name="tipoVeiculo" placeholder="Tipo de Veiculo" aria-label="Tipo de Veiculo">
       </div>
       <p></p>
       <div class="col">
+        <input type="text" class="form-control" name="tipoCarroceria" placeholder="Tipo de Carroceria" aria-label="Tipo de Carroceria">
+      </div>
+      <div class="col">
         <input type="text" class="form-control" name="carga" placeholder="Carga" aria-label="Carga">
       </div>
+      <p></p>
       <div class="col">
         <select class="form-select" aria-label="Carregado">
             <option selected>Carregado</option>
@@ -104,30 +135,33 @@
             <option value="Sim">Não</option>
           </select>  
       </div>
-      <p></p>
       <div class="col">
         <input type="text" class="form-control" name="detalhesVeiculo" placeholder="Detalhes no Veiculo" aria-label="Detalhes no Veiculo">
       </div>
-      <div class="col">
-        <select class="form-select" aria-label="Local da Ocorrência">
-            <option selected>Local da Ocorrência</option>
-            <option value="">$</option>
-            <option value="">$</option>
-          </select>      
-        </div>
       <p></p>
       <div class="col">
-        <select class="form-select" aria-label="Origem">
-            <option selected>Origem</option>
-            <option value="">$</option>
-            <option value="">$</option>
+        Local da Ocorrência
+      <select id="estado1" class="form-select" aria-label="estado" onchange="carregarMunicipios('estado1',  'municipio1')">
+          <option value="">Selecione um estado</option>
+          </select>   
+          <select id="municipio1" class="form-select" aria-label="municipio">
+          </select>    
+        </div>
+      <div class="col">
+        Origem
+        <select id="estado2" class="form-select" aria-label="estado" onchange="carregarMunicipios('estado2','municipio2')">
+          <option value="">Selecione um estado</option>
+          </select>  
+          <select id="municipio2" class="form-select" aria-label="municipio">
           </select>      
         </div>
       <div class="col">
-        <select class="form-select" aria-label="Destino">
-            <option selected>Destino</option>
-            <option value="">#</option>
-            <option value="">$</option>
+        Destino
+        <select class="form-select" aria-label="Destino" id="estado3" onchange="carregarMunicipios('estado3','municipio3')">
+          <option value="">Selecione um estado</option>
+          </select>   
+          <select class="form-select" aria-label="Destino" id="municipio3">
+            <option value="">Selecione um estado</option>
           </select>   
            </div>
       <p></p>
@@ -150,12 +184,17 @@
         <input type="text" class="form-control" name="motorista" placeholder="Motorista" aria-label="Motorista">
       </div>
       <div class="col">
+        <input type="text" class="form-control" name="telefone" placeholder="Telefone" aria-label="Telefone">
+      </div>
+      <p></p>
+      <div class="col">
         <textarea class="form-control" aria-label="Breve relato" placeholder="Breve relato"></textarea>
       </div>
+      <p></p>
         <button type="button" class="btn btn-primary"> Enviar</button>
+        <script src="scripts/scriptFormulario.js"></script>
     </form>
     <footer>
-        
     </footer>
   </section>
 </body>
