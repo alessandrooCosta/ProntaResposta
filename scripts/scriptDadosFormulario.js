@@ -1,3 +1,6 @@
+
+/*
+
 const recebeDados = async () => {
     breveRelato = document.getElementById("breveRelato");
     const select = document.getElementsByTagName("select");
@@ -11,7 +14,7 @@ const recebeDados = async () => {
     for (let i = 0; i < select.length; i++) {
         valoresSelect[select[i].id] = select[i].value;
     }
-    */
+    
     //console.log(input);
     //console.log(select);
     resultado = document.getElementById("resultado");
@@ -56,3 +59,5 @@ const recebeDados = async () => {
     Breve relato: ${breveRelato}
     `;
 }
+
+*/

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link href="style/formulario.css" rel="stylesheet">
   <title>Document</title>
 </head>
-
 <body onload="carregarEstados()">
   <header class="">
     <ul class="nav justify-content-end">
@@ -22,30 +20,24 @@
     </ul>
   </header>
   <section>
-    <form class="form-container">
+    <form class="form-container" id="form">
           <fieldset>
             <legend>Informações do Solicitante e do Proprietário</legend>   
           <div >
             <label for="solicitante">Solicitante</label>
           <input type="text" class="form-control" id="solicitante" name="solicitante" placeholder="" aria-label="Solicitante">
         </div>
-
          <div>
           <label for="contato">Contato</label>
-          <input type="text" class="form-control" id="contato" name="contato" placeholder="" aria-label="Contato">
-          
+          <input type="text" class="form-control" id="contato" name="contato" placeholder="" aria-label="Contato">   
          </div>
           <div>
             <label for="proprietario">Proprietario</label>
-          <input type="text" class="form-control" id="proprietario" name="proprietario" placeholder="" aria-label="proprietario">
-        
+          <input type="text" class="form-control" id="proprietario" name="proprietario" placeholder="" aria-label="proprietario">       
           </div>
         </fieldset>
         </div>
         </div>
-       
-
-
 <div class="">
   <fieldset>
     <legend>Dados da Ocorrência</legend>    
@@ -78,56 +70,39 @@
     <input type="date" id="data" class="form-control" name="data" disabled>
     <input type="time" id="horario" class="form" name="horario" disabled>
   </fieldset>
-</div>
-        
+</div>   
 <div class="">
-
   <fieldset>
     <legend>Identificação do Veículo</legend>  
-   
       Placa do Cavalo
       <input type="text" id="placaCavalo" class="form-control" name="placaCavalo" placeholder=""
         aria-label="Placa do Cavalo">
- 
       Placa da Carreta
       <input type="text" class="form-control" id="placaCarreta" name="placaCarreta" placeholder=""
         aria-label="Placa da Carreta">
- 
       Marca
       <input type="text" class="form-control" id="marca" name="marca" placeholder="" aria-label="Marca">
-   
-  
       Modelo
       <input type="text" class="form-control" id="modelo" name="modelo" placeholder="" aria-label="Modelo">
- 
-    
       Ano
       <input type="text" class="form-control" id="ano" name="ano" placeholder="" aria-label="Ano">
-    
-   
       Cor
       <input type="text" class="form-control" id="cor" name="cor" placeholder="" aria-label="Cor">
- 
       Tipo de Veiculo
       <select id= "tipoVeiculo" class="form-select" aria-label="">
-        <option value="Não Possui">Não identificado</option>
-        <option value="Baú Frigorífico / Refrigerado">Bitrem</option>
-        <option value="Boiadeira">Bitruck</option>
-        <option value="Botijões de gás">Caminhão Toco</option>
-        <option value="Caçamba Basculante">Cavalo mecânico com três eixos</option>
-        <option value="Caçamba / baú">Cavalo mecânico simples</option>
-        <option value="Canavieira">Cavalo Mecânico Traçado</option>
-        <option value="Cegonha">Furgão</option>
-        <option value="Florestal">Rodotrem</option>
-        <option value="Grade baixa">Truck</option>
-        <option value="Graneleiro/ Grade alta">Van</option>
-        <option value="Munck">VUC (Veículo Urbano de Carga)</option>
+        <option value="Não identificado">Não identificado</option>
+        <option value="Bitrem">Bitrem</option>
+        <option value="Bitruck">Bitruck</option>
+        <option value="Caminhão Toco">Caminhão Toco</option>
+        <option value="Cavalo mecânico com três eixos">Cavalo mecânico com três eixos</option>
+        <option value="Cavalo mecânico simples">Cavalo mecânico simples</option>
+        <option value="Cavalo Mecânico Traçado">Cavalo Mecânico Traçado</option>
+        <option value="Furgão">Furgão</option>
+        <option value="Rodotrem">Rodotrem</option>
+        <option value="Truck">Truck</option>
+        <option value="Van">Van</option>
+        <option value="VUC (Veículo Urbano de Carga)">VUC (Veículo Urbano de Carga)</option>
       </select>
-      <!--
-      <input type="text" class="form-control" name="tipoVeiculo" placeholder=""
-        aria-label="Tipo de Veiculo">
-      -->
-
       Tipo de Carroceria
       <select id= "tipoCarroceria" class="form-select" aria-label="">
         <option value="Não Possui">Não identificado</option>
@@ -150,19 +125,10 @@
         <option value=">Silo">Silo</option>
         <option value="Tanque">Tanque</option>
       </select>
-      <!--
-      <input type="text" class="form-control" name="tipoCarroceria" placeholder=""
-        aria-label="Tipo de Carroceria">
-      -->
-    
       Detalhes no Veiculo
       <input type="text" class="form-control" id="detalhesVeiculo" name="detalhesVeiculo" placeholder=""
         aria-label="Detalhes no Veiculo">
-
 </fieldset>
-
-
-
 <fieldset>
   <legend>Informações sobre a Carga</legend>   
   <div class="grid-container">   
@@ -182,7 +148,6 @@
   </div>
 </fieldset>
 </div>
-
 <div class="">
   <fieldset>
     <legend>Equipamentos e Acessórios</legend> 
@@ -225,82 +190,61 @@
     </div>
 </fieldset>
 </div>
-
    <div class="">
     <fieldset>
       <legend> Dados Operacionais</legend>
         OS de abertura
         <input type="text" class="form-control" id="os" name="os" placeholder="" aria-label="OS de abertura">
-  
         OS MOVA
         <input type="text" class="form-control" id="osmova" name="osmova" placeholder="" aria-label="OS MOVA">
-     
         Protocolo da Ligação
         <input type="text" class="form-control" id="protocolo" name="protocolo" placeholder="" aria-label="Protocolo da Ligação">
-    
-     
         GR acionou o serviço
-        <select class="form-select" id="grAciona" aria-label="GR acionou o serviço">
+        <select class="form-select" id="grAciona" aria-label="GR acionou o serviço"  onchange="habilitarNomeGR()">
           <option></option>
           <option value="Não">Não</option>
           <option value="Sim">Sim</option>
         </select>
-     
+        Nome da GR
+        <input type="text" class="form-control" id="gr" name="gr" placeholder="" aria-label="Nome da GR" disabled>
         GR irá arcar com os custos
         <select class="form-select" id="grCusto" aria-label="GR irá arcar com os custos">
           <option></option>
           <option value="Não">Não</option>
           <option value="Sim">Sim</option>
         </select>
-  
         Envio o comando de bloqueio
         <select class="form-select" id="envioComando" aria-label="Envio do comando de bloqueio">
           <option selected></option>
           <option value="Não">Não</option>
           <option value="Sim">Sim</option>
         </select>
-  
     </fieldset>
    </div>
-
-
- 
 <div class="">
-
   <fieldset>
     <legend> Informações do Motorista </legend>
-    
       Motorista
       <input type="text" class="form-control" id="motorista" name="motorista" placeholder="" aria-label="Motorista">
-   
       Telefone
       <input type="text" class="form-control" id="telefone" name="telefone" placeholder="" aria-label="Telefone">
-
   </fieldset>
-  
 </div>
-
-
 <div class="">
-
   <fieldset>
     <legend> Breve relato </legend>
-    
       <textarea class="form-control" id="breveRelato" aria-label="Breve relato" placeholder="Breve relato"></textarea>
- 
     </fieldset>
 </div>
-
-
-
-
-
         <button type="button" class="btn btn-primary" onclick="recebeDados()">Enviar</button>
+        <div class="navigation-buttons">
+          <!--   <button type="button" class="btn btn-primary" id="botaoSubir">Subir</button>  -->
+        </div>
         <script src="scripts/scriptFormulario.js"></script>
         <script src="scripts/scriptDadosFormulario.js"></script> 
     </form>
     <p></p>
-    <textarea id="resultado" name="resultado" class="form-control" rows="42" disabled> </textarea>
+  <textarea id="resultado" name="resultado" class="form-control" rows="42" disabled style="display: none;"> </textarea>
   <button type="button" class="btn btn-primary" style="" onclick="copiarDados()">Copiar</button>
   <button type="button" class="btn btn-primary" style="" onclick="limparDados()">Limpar</button>
   <footer>
