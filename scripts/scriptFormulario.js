@@ -139,6 +139,17 @@ const recebeDados = async () => {
     Breve relato: ${breveRelato}
     `;
 }
-    
+
+function copiarDados() {
+    let copyText = document.getElementById("#resultado").innerHTML;
+    navigator.clipboard.writeText(copyText);
+}
+document.querySelector("#botaoCopiar").addEventListener("click", copiarDados);
+
+function limparDados() {
+    resultado.innerHTML = ``;
+    resultado.disabled = true;
+    resultado.style.display = 'none';
+}
 
 
