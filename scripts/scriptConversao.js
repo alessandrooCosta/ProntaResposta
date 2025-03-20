@@ -12,19 +12,27 @@ function formatarDados() {
   // Adiciona o cabeçalho manualmente
   dadosFormatados.push("Data da Posição\tLatitude\tLongitude");
 
-  // Processa as linhas em grupos de três (Data da Posição, Latitude e Longitude)
-  // Começa da linha 3 para pular o cabeçalho
-  for (let i = 3; i < linhas.length; i += 3) {
-      const data = linhas[i].trim(); // Remove espaços extras da Data da Posição
-      const latitudeOriginal = linhas[i + 1] ? linhas[i + 1].trim() : ''; // Latitude
-      const longitudeOriginal = linhas[i + 2] ? linhas[i + 2].trim() : ''; // Longitude
+  // Processa cada linha (ignorando o cabeçalho, se existir)
+  for (let i = 1; i < linhas.length; i++) {
+      const linha = linhas[i].trim(); // Remove espaços extras
 
-      // Converte a latitude e longitude para o formato decimal
-      const latitudeDecimal = converterCoordenada(latitudeOriginal);
-      const longitudeDecimal = converterCoordenada(longitudeOriginal);
+      // Se a linha não estiver vazia, processa os dados
+      if (linha) {
+          // Divide a linha em colunas (considerando espaços ou tabulações)
+          const colunas = linha.split(/\s+/);
 
-      // Adiciona a linha formatada ao array
-      dadosFormatados.push(`${data}\t${latitudeDecimal}\t${longitudeDecimal}`);
+          // Extrai os valores de Data, Latitude e Longitude
+          const data = colunas[0] + ' ' + colunas[1]; // Data e Hora
+          const latitudeOriginal = colunas[2]; // Latitude no formato original
+          const longitudeOriginal = colunas[3]; // Longitude no formato original
+
+          // Converte as coordenadas para o formato decimal
+          const latitudeDecimal = converterCoordenada(latitudeOriginal);
+          const longitudeDecimal = converterCoordenada(longitudeOriginal);
+
+          // Adiciona a linha formatada ao array
+          dadosFormatados.push(`${data}\t${latitudeDecimal}\t${longitudeDecimal}`);
+      }
   }
 
   // Junta as linhas formatadas com quebras de linha
@@ -39,6 +47,11 @@ function formatarDados() {
 function converterCoordenada(coordenada) {
   if (!coordenada) return ''; // Se não houver coordenada, retorna vazio
 
+  // Verifica se a coordenada já está no formato decimal
+  if (!coordenada.includes(':')) {
+      return coordenada; // Retorna a coordenada sem conversão
+  }
+
   // Divide a coordenada em graus, minutos e segundos
   const partes = coordenada.split(':');
   const graus = parseFloat(partes[0]);
@@ -51,3 +64,17 @@ function converterCoordenada(coordenada) {
   // Retorna o valor arredondado para 6 casas decimais (formato do Google Maps)
   return decimal.toFixed(6);
 }
+
+function copiar() {
+  let copyText = document.getElementById("#outputTextarea").innerHTML;
+  navigator.clipboard.writeText(copyText);
+}
+document.querySelector("#botaoCopiar").addEventListener("click", copiar);
+
+function limpar() {
+  inputTextarea = document.getElementById('inputTextarea');
+  limpo = inputTextarea.value;
+  limpo.innerHTML = ``;
+}
+
+
