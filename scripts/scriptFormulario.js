@@ -140,13 +140,14 @@ const recebeDados = async () => {
     `;
 }
 
-function copiarDados() {
-    let copyText = document.getElementById("#resultado").innerHTML;
-    navigator.clipboard.writeText(copyText);
-}
-document.querySelector("#botaoCopiar").addEventListener("click", copiarDados);
+function copiar() {
+    const outputTextarea = document.getElementById('resultado');
+    outputTextarea.select();
+    outputTextarea.setSelectionRange(0, 99999); 
+    document.execCommand('copy');
+  }
 
-function limparDados() {
+function limpar() {
     resultado.innerHTML = ``;
     resultado.disabled = true;
     resultado.style.display = 'none';
