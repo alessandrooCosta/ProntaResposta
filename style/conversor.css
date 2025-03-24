@@ -89,6 +89,24 @@ button:hover {
     background-color: #0056b3;
 }
 
+.botoes {
+    display: flex;          /* Ativa o layout flexbox */
+    gap: 10px;             /* Espaçamento entre os botões */
+}
+
+.botoes button {
+    flex: 1;               /* Faz os botões ocuparem espaço igual */
+    padding: 8px 12px;     /* Tamanho do preenchimento interno */
+    font-size: 14px;       /* Tamanho da fonte */
+}
+
+/* Opcional: Efeito hover para melhor interação */
+.botoes button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
 #output {
     margin-top: 20px;
     padding: 10px;
