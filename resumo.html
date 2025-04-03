@@ -12,80 +12,97 @@
 
 <body>
   <header>
-    <ul class="nav justify-content-end">
+    <nav class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">Conversor de Latitude e Longitude</a>
+        <a class="nav-link d-flex align-items-center" href="index.html">
+          <i class="bi bi-house-door me-2"></i> Página Inicial
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="Formulario.html">Informaçõe do Acionamento (Breve Relato)</a>
+        <a class="nav-link d-flex align-items-center active" aria-current="page" href="formulario.html">
+          <i class="bi bi-pencil-square me-2"></i> Formulário de Acionamento
+        </a>
       </li>
-    </ul>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center active" aria-current="page" href="resumo.html">
+          <i class="bi bi-pencil-square me-2"></i> Formulário de Resumo de Encerramento
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center active" aria-current="page" href="">
+          <i class="bi bi-pencil-square me-2"></i> Pagina de Duvidas
+        </a>
+      </li>
+    </nav>
   </header>
-  <section>
-    <form class="container">
-      <div class="row">
-        <div class="col">
-          <input type="text" class="form-control" name="tempoDeslocamento"
-            placeholder="Tempo de Deslocamento da equipe comum até o marco zero" aria-label="Tempo de Deslocamento">
+  <section class="py-5">
+    <div class="container">
+      <form>
+        <h3 class="text-center mb-4 text-primary">
+          Formulario de Resumo de Encerramento
+        </h3>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="tempoDeslocamento" class="form-label">Tempo de deslocamento</label>
+            <input type="time" class="form-control" name="tempoDeslocamento" id="tempoDeslocamento" aria-label="Tempo de Deslocamento">
+          </div>
+          <div class="col-md-6">
+            <label for="chegadaMarcoZero" class="form-label">Horário de chegada ao marco zero</label>
+            <input type="time" class="form-control" name="chegadaMarcoZero" id="chegadaMarcoZero" aria-label="Chegada marco zero">
+          </div>
+          <div class="col-md-6">
+            <label for="encerramento" class="form-label">Horário de Encerramento</label>
+            <input type="time" class="form-control" name="encerramento" id="encerramento" aria-label="Encerramento">
+          </div>
+          <div class="col-md-6">
+            <label for="horaAdicional" class="form-label">Hora adicional</label>
+            <select class="form-select" id="horaAdicional" aria-label="Hora adicional">
+              <option selected></option>
+              <option value="Não">Não</option>
+              <option value="Sim">Sim</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="horasInseridas" class="form-label">Horas Inseridas na OS</label>
+            <select class="form-select" id="horasInseridas" aria-label="Horas Inseridas na OS">
+              <option selected></option>
+              <option value="Não">Não</option>
+              <option value="Sim">Sim</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="cargaIntacta" class="form-label">Carga Intacta</label>
+            <select class="form-select" id="cargaIntacta" aria-label="Carga Intacta">
+              <option selected></option>
+              <option value="Não">Sim</option>
+              <option value="Sim">Não</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="motoristaPerigo" class="form-label">Motorista fora de Perigo</label>
+            <select class="form-select" id="motoristaPerigo" aria-label="Motorista fora de Perigo">
+              <option selected></option>
+              <option value="Não">Sim</option>
+              <option value="Sim">Não</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="veiculoLocalizado" class="form-label">Veículo localizado</label>
+            <select class="form-select" id="veiculoLocalizado" aria-label="Veículo localizado">
+              <option selected></option>
+              <option value="Não">Sim</option>
+              <option value="Sim">Não</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="resumo" class="form-label">Resumo</label>
+            <textarea class="form-control" id="resumo" aria-label="Resumo"></textarea>
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" name="chegadaMarcoZero"
-            placeholder="Chegada no marco zero da equipe comum" aria-label="Chegada marco zero">
+        <div class="d-flex justify-content-center mt-4">
+          <button type="button" class="btn btn-primary">Enviar</button>
         </div>
-        <p></p>
-        <div class="col">
-          <input type="text" class="form-control" name="encerramento"
-            placeholder="Encerramento do serviço da equipe comum" aria-label="Encerramento">
-        </div>
-        <div class="col">
-          <select class="form-select" aria-label="Hora adicional">
-            <option selected>Hora adicional da equipe comum</option>
-            <option value="Não">Não</option>
-            <option value="Sim">Sim</option>
-          </select>
-        </div>
-        <p></p>
-        <div class="col">
-          <input type="text" class="form-control" name="chegadaMarcoZeroRF"
-            placeholder="Chegada no marco zero equipe RF" aria-label="Encerramento">
-        </div>
-        <div class="col">
-          <select class="form-select" aria-label="Horas Inseridas na OS">
-            <option selected>Horas Inseridas na OS</option>
-            <option value="Não">Não</option>
-            <option value="Sim">Sim</option>
-          </select>
-        </div>
-        <p></p>
-        <div class="col">
-          <select class="form-select" aria-label="Carga Intacta">
-            <option selected>Carga Intacta</option>
-            <option value="Não">Sim</option>
-            <option value="Sim">Não</option>
-          </select>
-        </div>
-        <div class="col">
-          <select class="form-select" aria-label="Motorista fora de Perigo">
-            <option selected>Motorista fora de Perigo</option>
-            <option value="Não">Sim</option>
-            <option value="Sim">Não</option>
-          </select>
-        </div>
-        <p></p>
-        <div class="col">
-          <select class="form-select" aria-label="Veiculo localizado">
-            <option selected>Veiculo localizado</option>
-            <option value="Não">Sim</option>
-            <option value="Sim">Não</option>
-          </select>
-        </div>
-        <div class="col">
-          <textarea class="form-control" aria-label="Resumo" placeholder="Resumo"></textarea>
-        </div>
-      </div>
-      <button type="button" class="btn btn-primary">Enviar</button>
-    </form>
-    <div>
+      </form>
     </div>
   </section>
 </body>

@@ -12,38 +12,54 @@
 
 <body>
     <header>
-        <h3 class="modal-title" style="color: white">
-            Conversor de Latitude e Longitude
-        </h3 >
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link" href="">Informaçõe do Acionamento (Breve Relato)</a> 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">Resumo de Finalização</a>
-            </li>
-        </ul>
-    </header>
+      <nav class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="index.html">
+            <i class="bi bi-house-door me-2"></i> Página Inicial
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center active" aria-current="page" href="">
+            <i class="bi bi-pencil-square me-2"></i> Formulário de Acionamento
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center active" aria-current="page" href="">
+            <i class="bi bi-pencil-square me-2"></i> Formulário de Resumo de Encerramento
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center active" aria-current="page" href="">
+            <i class="bi bi-pencil-square me-2"></i> Pagina de Duvidas
+          </a>
+        </li>
+      </nav>
+      </header>
     <section>
-        <div class="container">
-            <div class="row row-cols-2">
-                <div class="col">
-                    <textarea id="inputTextarea" rows="10" cols="50" class="form-control" aria-label="inputTextarea"
-                        strong placeholder="Cole as 10 últimas posições aqui..."></textarea>
-                    <button type="button" class="btn btn-primary" onclick="formatarDados()">Converter</button>
-                </div>
-                <div class="col">
-                    <textarea id="outputTextarea" name="outputTextarea" rows="10" cols="50" class="form-control"
-                        readonly></textarea>
-                    <div class="botoes">
-                        <button type="button" id="botaoCopiar" name="botaoCopiar" class="btn btn-primary"
-                            onclick="copiar()">Copiar</button>
-                        <button type="button" id="botaoLimpar" name="botaoLimpar" class="btn btn-primary"
-                            onclick="limpar()">Limpar</button>
+        <form>
+            <h3 class="text-center mb-4 text-primary">Conversor de Latitude e Longitude</h3>
+            <p class="text-center">Clique em "Converter" para formatar os dados.</p>
+            <p class="text-center">Clique em "Copiar" para copiar os dados formatados.</p>
+            <div class="container">
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <textarea id="inputTextarea" rows="10" cols="50" class="form-control" aria-label="inputTextarea"
+                            strong placeholder="Cole as 10 últimas posições aqui..."></textarea>
+                        <button type="button" class="btn btn-primary" onclick="formatarDados()">Converter</button>
+                    </div>
+                    <div class="col">
+                        <textarea id="outputTextarea" name="outputTextarea" rows="10" cols="50" class="form-control"
+                            readonly></textarea>
+                        <div class="botoes">
+                            <button type="button" id="botaoCopiar" name="botaoCopiar" class="btn btn-primary"
+                                onclick="copiar()">Copiar</button>
+                            <button type="button" id="botaoLimpar" name="botaoLimpar" class="btn btn-primary"
+                                onclick="limpar()">Limpar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form> 
     </section>
     <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.9537353153168!3d-37.81627917975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d9f0b1b1a1b1!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1611818391234!5m2!1sen!2sau" 
     width="1150" height="350" style="border:0;" allowfullscreen="" loading="lazy"> 
