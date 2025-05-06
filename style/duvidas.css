@@ -1,0 +1,30 @@
+/* Estilos para a página de dúvidas frequentes */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #f1f1f1;
+    color: #555;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+.accordion-button {
+    font-weight: bold;
+}
+
+.accordion-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
