@@ -58,6 +58,7 @@ section {
     border-radius: 6px; /* Mantido */
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); /* Suavizado */
     margin: 0 auto; /* Centraliza horizontalmente */
+     background-color: #fff;
 }
 
 .row {
@@ -77,6 +78,7 @@ section {
     font-size: 1rem;
     transition: border-color 0.3s, box-shadow 0.3s;
     margin-bottom: 10px; /* Mantido */
+     background-color: #fff;
 }
 
 .form-control:focus, .form-select:focus {
@@ -86,9 +88,18 @@ section {
 }
 
 textarea.form-control {
-    min-height: 80px; /* Reduzido */
-    resize: vertical;
-    max-width: 300px; /* Define um tamanho menor */
+    min-height: 250px; /* Reduzido */
+    resize: none;
+    max-width: 500px; /* Define um tamanho menor */
+    width: 100%; /* Garante que ocupe toda a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+textarea#resultado.form-control {
+    max-height: 80%; /* Reduzido */
+    height: 800px; /* Mantido */
+    resize: none;
+    max-width: 800px; /* Define um tamanho menor */
     width: 100%; /* Garante que ocupe toda a largura disponível */
     margin: 0 auto; /* Centraliza horizontalmente */
 }
